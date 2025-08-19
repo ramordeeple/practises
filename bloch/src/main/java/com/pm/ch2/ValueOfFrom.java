@@ -23,6 +23,20 @@ enum Rank {
     NINE,
 }
 
+/** Creates only one object and granting global access to it */
+class Singleton {
+    private static Singleton instance;
+    private Singleton() {}
+
+    public static Singleton getInstance() {
+        if (instance == null) {
+            instance = new Singleton();
+        }
+
+        return instance;
+    }
+}
+
 public class ValueOfFrom {
     /** Creates an object based on another object */
     Date date = Date.from(Instant.now());
@@ -34,6 +48,8 @@ public class ValueOfFrom {
     BigInteger prime = BigInteger.valueOf(Integer.MAX_VALUE);
     Rank valJack = Rank.valueOf("JACK");
 
-
+    /** Both are the same */
+    Singleton singleton1 = Singleton.getInstance();
+    Singleton singleton2 = Singleton.getInstance();
 
 }
