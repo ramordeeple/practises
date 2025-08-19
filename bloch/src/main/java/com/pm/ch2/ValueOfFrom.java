@@ -30,8 +30,10 @@ public class ValueOfFrom {
     /** Simple alternative of {@code new } */
     Set<Rank> faceCards = EnumSet.of(JACK, QUEEN, KING);
 
-    /** Returns an object from string */
+    /** Converts a value to its class representation */
     BigInteger prime = BigInteger.valueOf(Integer.MAX_VALUE);
     Rank valJack = Rank.valueOf("JACK");
+
+
 
 }
