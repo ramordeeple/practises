@@ -40,6 +40,8 @@ public class ValueOfFrom {
     Rank valJack = Rank.valueOf("JACK");
 
     /** getting the instance from Singleton */
-    Singleton singleton1 = Singleton.INSTANCE;
+    Singleton singleton = Singleton.INSTANCE;
+
+
 
 }
