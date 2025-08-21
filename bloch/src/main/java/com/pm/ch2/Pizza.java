@@ -16,8 +16,8 @@ public abstract class Pizza {
             return self();
         }
 
+        /** Both methods for the future classes */
         abstract Pizza build();
-
         protected abstract T self();
     }
 
