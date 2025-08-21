@@ -42,4 +42,5 @@ public class NutritionFacts {
         sodium = builder.sodium;
         carbohydrate = builder.carbohydrate;
     }
+
 }
