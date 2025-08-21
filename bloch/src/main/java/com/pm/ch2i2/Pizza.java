@@ -1,4 +1,4 @@
-package com.pm.ch2;
+package com.pm.ch2i2;
 
 import java.util.EnumSet;
 import java.util.Objects;

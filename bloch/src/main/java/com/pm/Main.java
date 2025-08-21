@@ -1,13 +1,12 @@
 package com.pm;
 
 
-import com.pm.ch2.Calzone;
-import com.pm.ch2.NutritionFacts;
-import com.pm.ch2.NyPizza;
-import com.pm.ch2.ValueOfFrom;
+import com.pm.ch2i2.Calzone;
+import com.pm.ch2i2.NutritionFacts;
+import com.pm.ch2i2.NyPizza;
 
-import static com.pm.ch2.NyPizza.Size.*;
-import static com.pm.ch2.Pizza.Topping.*;
+import static com.pm.ch2i2.NyPizza.Size.*;
+import static com.pm.ch2i2.Pizza.Topping.*;
 
 public class Main {
     public static void main(String[] args) {

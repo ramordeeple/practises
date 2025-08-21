@@ -1,4 +1,4 @@
-package com.pm.ch2;
+package com.pm.ch2i2;
 
 public class NutritionFacts {
     private final int servingSize;

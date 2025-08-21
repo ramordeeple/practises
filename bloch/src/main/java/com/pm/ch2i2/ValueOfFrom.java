@@ -1,4 +1,4 @@
-package com.pm.ch2;
+package com.pm.ch2i2;
 
 import java.math.BigInteger;
 import java.time.Instant;
@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.EnumSet;
 import java.util.Set;
 
-import static com.pm.ch2.Rank.*;
+import static com.pm.ch2i2.Rank.*;
 
 enum Rank {
     KING,

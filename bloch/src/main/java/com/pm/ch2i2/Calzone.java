@@ -1,4 +1,4 @@
-package com.pm.ch2;
+package com.pm.ch2i2;
 
 public class Calzone extends Pizza {
     private final boolean sauceInside;
