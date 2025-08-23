@@ -4,6 +4,9 @@ package com.pm.ch2i5;
 import java.util.List;
 import java.util.Objects;
 
+class Lexicon {
+}
+
 /** It provides flexibility & testability*/
 public class ProperSpellChecker {
     private final Lexicon dictionary;
