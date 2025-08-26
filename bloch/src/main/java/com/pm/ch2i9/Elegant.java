@@ -20,4 +20,13 @@ public class Elegant {
                 out.write(buf, 0, n);
         }
     }
+
+    static String firstLineOfFile(String path, String defaultValue) {
+        try (BufferedReader br = new BufferedReader(
+                new FileReader(path))) {
+            return br.readLine();
+        } catch (IOException e) {
+            return defaultValue;
+        }
+    }
 }
