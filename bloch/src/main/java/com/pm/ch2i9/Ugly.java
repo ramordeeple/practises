@@ -1,8 +1,6 @@
-package com.pm;
+package com.pm.ch2i9;
 
 import java.io.*;
-
-import static java.lang.System.in;
 
 public class Ugly {
     static void copy(String src, String dst) throws IOException {
@@ -12,13 +10,13 @@ public class Ugly {
             try {
                 byte[] buf = new byte[1024];
                 int n;
-                while ((n = in.read(buf)) >= 0)
-                    out.write(buf, 0, n);
-
+                while ((n = in.read(buf)) >= 0) out.write(buf, 0, n);
+            }
             finally {
                 out.close();
-            }}
-            finally {
+            }
+            } finally {
                 in.close();
             }
         }
+}
