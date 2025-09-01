@@ -2,6 +2,7 @@ package com.pm.i10;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class PhoneNumber {
     private final short areaCode, prefix, lineNum;
@@ -38,4 +39,35 @@ public class PhoneNumber {
 
       /** Worst hashcode*/
 //    @Override public int hashCode() {return 42;}
+
+
+    /** Good implementation of {@code hashCode()}*/
+    @Override public int hashCode() {
+        int result = Short.hashCode(areaCode);
+        result = 31 * result + Short.hashCode(prefix);
+        result = 31 * result + Short.hashCode(lineNum);
+
+        return result;
+    }
+
+    /** Mediocre performance tho */
+//    @Override public int hashCode() {
+//        return Objects.hash(areaCode, prefix, lineNum);
+//    }
+
+    private int hashCode = 0;
+
+    @Override public int hashCode() {
+        int result = hashCode;
+        if (result == 0) {
+            result = Short.hashCode(areaCode);
+            result = 31 * result + Short.hashCode(prefix);
+            result = 31 * result + Short.hashCode(lineNum);
+
+            hashCode = result;
+        }
+
+        return result;
+    }
+
 }
