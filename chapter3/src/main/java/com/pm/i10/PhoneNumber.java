@@ -1,5 +1,8 @@
 package com.pm.i10;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class PhoneNumber {
     private final short areaCode, prefix, lineNum;
 
@@ -27,7 +30,12 @@ public class PhoneNumber {
                 pn.prefix == prefix;
     }
 
+    public void func() {
+        Map<PhoneNumber, String> m = new HashMap<>();
+        m.put(new PhoneNumber(707, 867, 5309), "Jenny");
 
+    }
 
-
+      /** Worst hashcode*/
+//    @Override public int hashCode() {return 42;}
 }
