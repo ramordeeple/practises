@@ -3,7 +3,7 @@ package com.pm.i10;
 import java.util.Objects;
 
 /** Violates symmetry */
-public final class CaseInsensitiveString {
+public final class CaseInsensitiveString implements Comparable<CaseInsensitiveString> {
     private final String s;
 
     public CaseInsensitiveString(String s) {
@@ -26,4 +26,8 @@ public final class CaseInsensitiveString {
                 ((CaseInsensitiveString) o).s.equals(s);
     }
 
+    @Override
+    public int compareTo(CaseInsensitiveString cis) {
+        return String.CASE_INSENSITIVE_ORDER.compare(s, cis.s);
+    }
 }

@@ -1,10 +1,11 @@
 package com.pm.i10;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public class PhoneNumber {
+public class PhoneNumber implements Comparable<PhoneNumber> {
     private final short areaCode, prefix, lineNum;
 
     public PhoneNumber(int areaCode, int prefix, int lineNum) {
@@ -78,4 +79,27 @@ public class PhoneNumber {
             throw new AssertionError();
         }
     }
+
+    public int compareTo(PhoneNumber pn) {
+        int result = Short.compare(areaCode, pn.areaCode);
+
+        if ( result == 0) {
+            result = Short.compare(prefix, pn.prefix);
+            if (result == 0)
+                result = Short.compare(lineNum, pn.lineNum);
+        }
+
+        return result;
+    }
+
+    private static final Comparator<PhoneNumber> COMPARATOR =
+        Comparator.comparingInt((PhoneNumber pn) -> pn.areaCode)
+                .thenComparing(pn -> pn.prefix)
+                .thenComparing(pn -> pn.lineNum);
+
+    public int compareTo(PhoneNumber pn) {
+        return COMPARATOR.compare(this, pn);
+    }
+
+    static Comparator<Object> hashCodeOrder = Comparator.comparingInt(o -> o.hashCode());
 }
