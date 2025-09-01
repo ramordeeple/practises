@@ -70,4 +70,12 @@ public class PhoneNumber {
         return result;
     }
 
+
+    @Override public PhoneNumber clone() {
+        try {
+            return (PhoneNumber) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
+    }
 }
