@@ -33,4 +33,16 @@ public enum Operation {
         return Optional.ofNullable(stringToOperation.get(symbol));
     }
     public abstract double apply(double a, double b);
+
+    public static Operation inverse(Operation op) {
+        switch (op) {
+            case PLUS: return Operation.PLUS;
+            case MINUS: return Operation.MINUS;
+            case DIVIDE: return Operation.DIVIDE;
+            case MULTIPLY: return Operation.MULTIPLY;
+
+            default: throw new AssertionError("Unknown operation " + op);
+        }
+    }
+
 }
