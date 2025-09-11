@@ -8,15 +8,15 @@ import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toMap;
 
 public enum Phase {
-    SOLID, LIQUID, GAS;
+    SOLID, LIQUID, GAS, PLASMA;
 
     public enum Transition {
         MELT(SOLID, LIQUID), FREEZE(LIQUID, SOLID),
         BOIL(LIQUID, GAS), CONDENSE(GAS, LIQUID),
-        SUBLIME(SOLID, GAS), DEPOSIT(GAS, SOLID);
+        SUBLIME(SOLID, GAS), DEPOSIT(GAS, SOLID),
+        IONIZE(GAS, PLASMA), DEIONIZE(PLASMA, GAS);
 
         private final Phase from;
-
         private final Phase to;
 
         Transition(Phase from, Phase to) {
