@@ -1,5 +1,6 @@
 package com.pm.i45;
 
+import javax.smartcardio.Card;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -9,6 +10,7 @@ import java.util.*;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.toList;
 
 public class Anagrams {
     public static void main(String[] args) throws IOException {
@@ -22,9 +24,17 @@ public class Anagrams {
                     .forEach(g -> System.out.println(g.size() + ": " + g));
         }
     }
+
     private static String alphabetize(String s) {
         char[] a = s.toCharArray();
         Arrays.sort(a);
         return new String(a);
+    }
+
+    private static List<Card> newDeck() {
+        return Stream.of(Suit.values())
+                .flatMap(suit -> Stream.of(Rank.values())
+                        .map(rank -> new Card(suit, rank)))
+                .collect(toList());
     }
 }
